@@ -1,9 +1,8 @@
 
 
-%w(haml sinatra sinatra/base sequel erb sinatra/navigation).each  { |gem| require gem}
+%w(haml sinatra sinatra/base sequel erb ).each  { |gem| require gem}
 
+Dir.glob(%w(*.rb  lib/**/*.rb configs/**/*.rb app/{blog}/[CM]/**/*.rb), &method(:load))
 
-register Sinatra::Navigation
-
-Dir.glob(%w(*.rb configs/**/*.rb app/{blog}/[CM]/**/*.rb), &method(:load))
 run Rack::Cascade.new [ M2::IndexApp, M2::BlogApp]
+

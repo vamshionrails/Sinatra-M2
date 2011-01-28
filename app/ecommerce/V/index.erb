@@ -1,1 +1,9 @@
 "PRODUCTS" 
+
+<% @products.each do |p| %>
+<br>
+<%= p.id %>
+<%= link_to "products/#{p.id}", p.name %><br>
+<%end%>
+
+

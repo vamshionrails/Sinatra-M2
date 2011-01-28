@@ -18,6 +18,7 @@ end
 module M2
   module Ecommerce
     class Product < Sequel::Model
+      many_to_many :categories
       def self.products
         Product.all
       end

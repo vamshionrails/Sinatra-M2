@@ -1,5 +1,22 @@
 
 POST 
 <br>
-<%= @post.id %>
-<%= @post.name %>
+<%= link_to '/', 'Home' %>
+<%= link_to M2::IndexApp::OPTIONS[:ecommerce_products_url], 'Products' %>
+<br>
+<br>
+<%= @product.id %>
+<%= link_to "#{@product.id}", @product.name %>
+<br>
+
+<% if @product_categories.empty? %>
+     <%= "Not Categorized" %>
+
+<% else %>
+<%= "Categories" %>
+<% @product_categories.each do |c| %>
+<br>
+ id:<%= c.id %> 
+ Name: <%= link_to "/ecommerce/category/#{c.id}", c.name %>
+<% end %>
+<% end %>

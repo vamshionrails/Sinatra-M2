@@ -6,10 +6,6 @@ module M2
       register Sinatra::Authentication
       set :views, (File.expand_path ".") + "/app/authentication/V"
 
-    get '/users' do
-      login_required
-    end
-
 
 
   end

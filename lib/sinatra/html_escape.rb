@@ -7,6 +7,7 @@ module Sinatra
       opts.each { |key,value| attributes << key.to_s << "=\"" << value << "\" "}
       "<a href=\"#{url}\" #{attributes}>#{text}</a>"
     end
+    
   end
   #helpers HTMLHelpers
   register HTMLHelper
